@@ -36,7 +36,16 @@ class WhatsAppController extends Controller
 
         $responseMessage = $this->processMessage($body);
 
-        return response()->json($responseMessage);
+        return response()->json(['message' => $responseMessage],200);
+    }
+
+
+    private function processMessage($message){
+        if(stripos($message,'Hello') !== false){
+            return "Hello! How can i help ?";
+
+        }
+        return 'Sorry, I did not understand that';
     }
 
 
