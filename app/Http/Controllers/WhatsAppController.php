@@ -33,6 +33,10 @@ class WhatsAppController extends Controller
         // handle incoming msgs from whatsapp
         $from =$request->input('From');
         $body =$request->input('Body');
+
+        $responseMessage = $this->processMessage($body);
+
+        return response()->json($responseMessage);
     }
 
 
