@@ -29,5 +29,11 @@ class WhatsAppController extends Controller
         }
     }
 
+    public function webhook(Request $request){
+        // handle incoming msgs from whatsapp
+        $from =$request->input('From');
+        $body =$request->input('Body');
+    }
+
 
 }
